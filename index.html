@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="This is a basic HTML,CSS & Js website of Portfolio">
+  <meta name="keywords" content="KvN Websites,HTML,Css,Portfolio Website,Personal Website,HTML Works">
+  <meta name="author" content="vinit,A full stack java developer who build this website with his basic knowledge & redirecting to Technical all Works. ">
+  <title>KvN Webs</title>
+  <link rel="icon" type="image/x-icon" href="../Attachements/logo.png">
+
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   <!-- Bootstrap Font Icon CSS -->
+   <link rel="stylesheet" href=
+   "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+   <!-- custom styles -->
+  <link rel="stylesheet" href="./index.css" />
+</head>
+
+<body class="">
+  <!-- /*navbar closed when clicked outside*/ -->
+  <a href=""  for="outsideClick" class="close-navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#navbar"
+    aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"></a>
+  <nav class="navbar fixed-top navbar-expand-lg  mb-2" style="background-color:  #cbdff2;border-radius:25px">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <h2>KvN-webs</h2>
+      </a>
+      <!--.. Hamburger animation..-->
+      <!-- <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+        aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"  id="hamburger"></span>    
+      </button> -->
+
+
+      <label class="hamburger" for="check">
+        <input type="checkbox" id="check" class="navbar-toggler ms-auto"  data-bs-toggle="collapse"
+        data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false"
+        aria-label="Toggle navigation"/> 
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home<span class="bi bi-house-fill p-2"></span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Details">About-Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#Resume">Resume</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="true">
+              My-Works
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <ol>
+                  <h3><u>Web Works</u></h3>
+                  <li><a class="dropdown-item" href="https://kvnshop-8fde5.web.app">Shopping-Cart</a></li>
+                  <li><a class="dropdown-item" href="./New folder/StudentResults.html">Student Result's</a></li>
+                  <li><a class="dropdown-item" href="./New folder/InterestCaluculator.html">Interest Calculator</a></li>
+                  <li><a class="dropdown-item" href="../../project-2/code/advertisement.html">Mobile Advertisement</a></li>
+                </ol>
+              </li>
+              <li>
+                <ol>
+                  <h3><u>java Works</u></h3>
+                  <li><a class="dropdown-item" href="#">CRUD Based Application</a></li>
+                </ol>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item" id="contactus">
+            <a class="nav-link" href="#footer">Contact-Info<i class="bi bi-person-fill"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><br><br><br><br>
+
+  <!-- /Main Code/ -->
+  <main class="">
+
+    <h2 class="text-center">My Works</h2>
+    <div id="carouselExampleIndicators" class="carousel slide p-2 h-75" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active "
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a ><img src="../Attachements/1.png" class="d-block w-100  img-fluid" alt="first"></a>
+        </div>
+        <div class="carousel-item">
+          <a > <img src="../Attachements/2.png" class="d-block w-100 img-fluid" alt="second"></a>
+        </div>
+        <div class="carousel-item">
+          <a><img src="../Attachements/3.png" class="d-block w-100 img-fluid" alt="third"></a>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev" id="carosel-button-prev">
+          <span class="carousel-control-prev-icon" id="previcon" aria-hidden="false"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next" id="carosel-button-next">
+          <span class="carousel-control-next-icon" id="nexticon" aria-hidden="false"></span>
+        </button>
+      </div>
+    </div>
+    
+    <fieldset class="border p-3 w-75 mx-auto mt-3" id="Details">
+      <legend class="float-none w-auto">
+        <h3><u>Detail's</u></h3>
+      </legend>
+      <div class="accordion mx-auto" id="accordionExample">
+
+        <div class="accordion-item ">
+          <h2 class="accordion-header " id="headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Profile Details
+            </button>
+          </h2>
+
+          <div id="collapseOne" class="accordion-collapse collapse " aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body  ">
+              <dl>
+                <dt>Full Name:</dt>
+                <dd>Vinit Dondapati</dd>
+                <dt>Father's Name:</dt>
+                <dd>KrishnaRao Dondapati</dd>
+                <dt>D.O.B:</dt>
+                <dd>08-05-2000</dd>
+                <dt>Address:</dt>
+                <dd>Main Road,B.R.C Puram(vill),Sompeta(m),<br>Srikakulam(Dist),<br>AndhraPradesh.532284</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item mt-3">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Education Qualifications
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <dl>
+                <dt>B.sc in Computers</dt>
+                <dd>With the Total Percentage of <strong>69%</strong> in b/w 2017-20 from Samskara Bharathi Degree
+                  College,Sompeta.</dd>
+                <hr>
+                <dt>Intermediate(M.P.C)</dt>
+                <dd>With an Aggregate of <strong>81.6%</strong>in b/w 2015-17 from B.K.J.C Korlam.</dd>
+                <hr>
+                <dt>SSc</dt>
+                <dd>With an Aggregate of <strong>83%</strong>in the acedamic year of 2014-15 from Z.P.H.School B.r.c
+                  Puram,Sompeta(m),&ensp;Srikakulam(Dist),&emsp;AndhraPradesh.&nbsp;&nbsp;&nbsp;&nbsp; 532284</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item mt-3">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Technical Skill's
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <dl>
+                <dt>Front-end:</dt>
+                <dd>HTML,CSS & JS(ES-6)</dd>
+                <dt>Back-end:</dt>
+                <dd>Java Technologies(Jdbc,Servlet,Jsp & Jstl)</dd>
+                <dt>Frame-Works:</dt>
+                <dd>Angular-14,Bootstrap,Test-Ng,Spring</dd>
+                <dt>Testing:</dt>
+                <ul>
+                  <li><dd>Manual Testing for <a href="https://adactinhotelapp.com">https://adactinhotelapp.com</a></dd></li>
+                  <li><dd>Automation Testing for <a href="http://183.82.103.245/nareshit/login.php">Hrms Application</a> using Selenium.</dd></li>
+                </ul>
+              </dl>
+              <dt>IDE'S:</dt>
+              <dd>Eclipse,Vs-code</dd>
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item mt-3 " id="Resume">
+          <h2 class="accordion-header " id="headingFour">
+            <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              Resume
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body text-center ">
+              <img src="../Attachements/resume.png" class="resumePhoto" alt="Resume">
+              <hr>
+              <div class="text-center p-2">
+                <a href="../Attachements/full updated Resume.pdf" download> <button
+                    class="btn bg-danger w-100">Download Resume</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </main>
+
+
+  
+
+  <!-- *Footer* -->
+
+  <footer class="mt-4" id="footer">
+    <div class="footer">
+      <div class="Address">
+        <h4>Address:</h4>
+        <p> Main Road,B.r.c Puram,</p>
+        <p> Sompeta,Srikakulam,</p>
+        <p> Andhra Pradesh,IND. 532284</p>
+      </div>
+      <hr style="border-top:4px dashed blue;">
+      <div class="Contact">
+        <h4>Conatct Info:</h4>
+        <p><a href="tel:7382128101">+917382128101</a></p>
+        <h4>Mail id:</h4>
+        <p><a href="#">dondapativinit@gmail.com</a></p>
+      </div>
+      <hr style="border-top:4px dashed blue;">
+      <div>
+        <div class="Socialmeadia">
+          <h4>Social Media</h4>
+          <a href=""><i>Facebook</i></a><br>
+          <a href=""><i>Instagram</i></a><br>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <p class="">Copyright © 2022 VinitWebs.</p> 
+  </div>
+  </footer>
+  <!-- Bootsrap 5 bundle  -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

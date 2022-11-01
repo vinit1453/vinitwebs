@@ -1,0 +1,231 @@
+<html>
+
+<head>
+  <title>Result</title>
+  <style>
+    div {
+      background: linear-gradient(skyblue, cyan);
+      border-radius: 30px;
+      width: 300px;
+      height: 300px;
+      margin: auto;
+      padding: 20px;
+      caret-color: red;
+    }
+
+    h3 {
+      text-align: center;
+    }
+
+    .op {
+      justify-content: center;
+    }
+
+    .btn {
+      cursor: pointer;
+      background: gray;
+      text-align: center;
+      font-weight: bold;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      width: 100px;
+      height: 50px;
+      background-color: transparent;
+      border: 1px solid turquoise;
+      border-radius: 10px 10px 10px 10px;
+      box-shadow: inset -3px -3px 3px turquoise, inset 3px 3px 3px black;
+      animation: inTheBox 2s ease-in infinite;
+
+    }
+
+    @keyframes inTheBox {
+      0% {
+        box-shadow: inset 3px 3px 3px turquoise, inset -3px -3px 3px turquoise, inset 6px 6px 6px black, inset -6px -6px 6px black;
+      }
+
+      25% {
+        box-shadow: inset 3px 3px 3px black, inset -3px -3px 3px black, inset 6px 6px 6px turquoise, inset -6px -6px 6px turquoise;
+      }
+
+      75% {
+        box-shadow: inset 6px 6px 6px black, inset -6px -6px 6px black, inset 9px 9px 9px turquoise, inset -9px -9px 9px turquoise;
+      }
+
+      100% {
+        box-shadow: inset 9px 9px 9px black, inset -9px -9px 9px black, inset 12px 12px 12px turquoise, inset -12px -12px 12px turquoise;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <table>
+      <form>
+        <tr>
+          <h3>Student Results</h3>
+        </tr>
+
+        <tr>
+          <td>Name</td>
+          <td><input type="text" id="n" placeholder="Fullname" name="name"> </td>
+
+        </tr>
+        <tr>
+          <td>Roll no:</td>
+          <td><input type="text" id="r" placeholder="ex:4808675309" maxlength="10"></td>
+
+        </tr>
+        <tr>
+          <td>HTML</td>
+          <td><input type="text" id="h" placeholder="Enter Marks in b/w 0-100"></td>
+
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td><input type="text" id="cs" placeholder="Enter Marks in b/w 0-100"></td>
+
+        </tr>
+        <tr>
+          <td>JS</td>
+          <td><input type="text" id="js"  placeholder="Enter Marks in b/w 0-100"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><input type="button" value="RESULT" onclick="Result()" class="btn"></input>&nbsp;&nbsp;
+            <input value="CLEAR" onclick="window.location.reload(true)" class="btn"></input></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"> <output id="tot" class="op"></output><br>
+            <output id="error"></output>
+            <output id="average"></output><br>
+            <output id="grade"></output><br>
+          </td>
+        </tr>
+      </form>
+    </table>
+  </div>
+
+  <script>
+    //error msg setter
+    function seterror(errormsg) {
+      document.getElementById('tot').innerHTML = "";
+      document.getElementById('average').innerHTML = "";
+      document.getElementById('grade').innerHTML = "";
+
+      //sets error inside tag of id 
+      element = document.getElementById('error');
+      element.innerHTML = errormsg;
+      element.style.color = "red";
+
+    }
+
+
+
+    function Result() {
+      validName = true;
+      validRoll = true;
+      validMarks = true;
+
+    
+    //Validating Marks
+      h = document.getElementById('h').value;
+      c = document.getElementById('cs').value;
+      j = document.getElementById('js').value;
+      if (h == 0 || c == 0 || j == 0) {
+        returnval = false;
+        validMarks = false;
+        seterror("Marks Cannot be Empty/Zero......")
+      }
+      if( h<0 ||c<0 || j<0 || isNaN(h)|| isNaN(c)||isNaN(j)){
+        returnval = false;
+        validMarks = false;
+        seterror("Invalid Marks...pls Provide valid marks in between 0-100")
+      }
+      if (h.length > 2 || c.length > 2 || j.length > 2) {
+        returnval = false;
+        validMarks = false;
+        seterror("Marks must be 2 digits only......")
+      }
+
+      
+      //validating rollnumber
+      roll = document.getElementById('r').value;
+      if (roll.length == 0) {
+        returnval = false;
+        validRoll = false;
+        seterror('Rollnumber Cannot be empty...')
+      }
+      if (roll.length != 10) {
+        returnval = false;
+        validRoll = false;
+        seterror('Rollnumber Must be 10 characters only...')
+      }
+      if (isNaN(roll)) {
+        returnval = false;
+        validRoll = false;
+        seterror("Rollnumber Must contains numeric's only...")
+      }
+
+  
+
+         //validating name
+      name = document.getElementById('n').value;
+  
+  if (name.length < 4) {
+    returnval = false;
+    validName = false;
+    seterror('Name must be atleast 4 characters...')
+  }
+  if (!(isNaN(name))) {
+    returnval = false;
+    validName = false;
+    seterror('Name Cannot Contains Numeric values....')
+    
+  }
+  if (name.length == 0) {
+    returnval = false;
+    validName = false;
+    seterror('Name cannot be empty..')
+  }
+
+         //Calculating Result
+      if (validName == true && validRoll == true && validMarks == true) {
+        if (h <= 34 || c <= 34 || j <= 34) {
+          seterror("Failed in Examination...")
+          returnval = false;
+        } else {
+          var Total = parseFloat(h) + parseFloat(c) + parseFloat(j);
+          var average = Total / 3;
+          var grade;
+          if (average >= 90) {
+            grade = 'O'
+          }
+          else if (average >= 75) {
+            grade = 'A';
+          } else if (average >= 60) {
+            grade = 'B+'
+          } else if (average >= 50) {
+            grade = 'B';
+          } else if (average >=40) {
+            grade = 'C'
+          } else if (average > 34) {
+            grade = 'D'
+          } else {
+            seterror("Failed in Examination...")
+            returnval = false;
+          }
+          seterror('')
+          document.getElementById('tot').innerHTML = "Total Marks:" + Total;
+          document.getElementById('average').innerHTML = "Average:" + average.toFixed(2);
+          document.getElementById('grade').innerHTML = "Grade:" + grade;
+
+        }
+
+      }
+
+    } 
+  </script>
+</body>
+
+</html>

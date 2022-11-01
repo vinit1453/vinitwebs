@@ -1,0 +1,224 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    height: auto;
+    width: auto;
+    background-color: rgb(127, 127, 159);
+    position:relative;
+}
+a{
+    text-decoration: none;
+}
+/*Navbar Styling*/
+nav{
+    z-index: 2;
+    position:sticky;
+    top:0;
+   
+}
+ /*navbar closed when clicked outside*/
+ .close-navbar-toggler{
+    position: absolute;
+     top:0px;
+    left:0; 
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    cursor:pointer;
+    
+ }
+ .close-navbar-toggler.collapsed{
+    z-index:-1;
+ }
+
+
+
+ .navbar-toggler:focus,  /*remover  bootstraps  default blue border */
+.navbar-toggler:active{
+    outline:0;
+}
+
+/*hamburger animation*/
+
+.hamburger{
+ display:none;
+   }
+   
+   .hamburger span{
+     background: rgb(246, 153, 153);
+     border-radius:10px;
+     height:5px;
+     margin: 5px 0;
+     transition: .4s  cubic-bezier(0.68, -0.6, 0.32, 1.6);
+   
+   }
+   
+   
+   .hamburger span:nth-of-type(1){
+     width:50%;
+     
+   }
+   
+   .hamburger span:nth-of-type(2){
+     width:100%;
+   }
+   
+   
+   .hamburger span:nth-of-type(3){
+     width:75%; 
+   }
+   
+   
+   .hamburger input[type="checkbox"]{
+     display:none;
+   }
+   
+.nav-item .nav-link:hover{
+    border:1px dashed;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#dropdown:hover{
+    border:1px dashed;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.nav-item ul{
+    background: radial-gradient(rgb(179, 174, 174), white);
+    padding:auto;
+    margin:auto;
+    border-radius: 20px 40px 10px 40px; 
+    padding: 15px;
+    color:darkorange;
+}
+/* scroll property to drop-down */
+.dropdown ul{
+     overflow-y: scroll; /*scroll-bal activate */
+    height: 200px;
+     -ms-overflow-style: none; /*Hide scrollbar for IE & Edge  */
+    scrollbar-width: none; /*Hide scrollbar for Fire-Fox */
+}
+.dropdown ul::-webkit-scrollbar{
+    /*Hide scrollbar for Chrome,Safari & Opera */
+    display:none; 
+}
+
+/*Main Body styling*/
+.carousel{
+    display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.carousel-inner{
+   width: 75%;
+   height: 100%;
+ border-radius: 30px; 
+}
+.carousel-item img{
+    height: 350px;
+    width:700px;
+}
+
+.carousel-item img{
+   border:2px solid rebeccapurple;
+    object-fit:cover;
+    object-position: center;
+}
+.carousel-inner button:hover{
+         background-color: rgba(236, 240, 240, 0.6);
+         border-radius: 10%;
+}
+.carousel-inner button:hover span{
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+fieldset{
+         border:20px groove #ddd !important;     
+}
+legend u{
+    color: rgba(253, 253, 4, 0.975);
+}
+
+
+.accordion-body{
+     background:linear-gradient(to top,  rgb(220, 220, 127),white);  
+     border-radius:30px; 
+}
+
+#accordionExample .accordion-item{
+     border-radius:30px;  
+    }
+.accordion button{
+    background: transparent;
+    border-radius: 30px;
+} 
+
+
+
+    /*footer*/
+ 
+footer {
+    height: fit-content;
+    width: auto;
+    background: linear-gradient(to top, hwb(0 93% 4%), #f0acac);
+    padding: auto;
+    margin: auto;
+    border-radius: 25%;
+    position: sticky;
+    text-align: center;
+}
+.footer{
+    display: flex;
+    flex-direction: row;
+    padding: 13px 10px 10px 13px;
+    justify-content: space-around;
+}
+
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+
+/*Responsive Behaviour styling*/
+@media only screen and (max-width:900px) {
+
+    .hamburger{
+        display:flex;
+        flex-direction:column;
+        width:50px;
+        cursor:pointer;
+    }
+
+    .carousel-item img{
+        height: 75%;
+      
+    }
+    .resumePhoto{
+        width: 100%;
+    }
+  
+    .accordion-body{
+          overflow: auto;
+          -ms-overflow-style: none; /*Hide scrollbar for IE & Edge  */
+          scrollbar-width: none; /*Hide scrollbar for Fire-Fox */
+    }
+    .accordion-body::-webkit-scrollbar{
+        /*Hide scrollbar for Chrome,Safari & Opera */
+        display: none;
+    }
+    .footer {
+        display: flex;
+         text-align: center;
+       display: inline-block;
+       padding: auto;
+    }  
+    footer{
+        height: max-content;
+       }
+       
+}

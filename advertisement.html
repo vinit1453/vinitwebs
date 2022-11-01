@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./advertisement.css"/>
+</head>
+<body>
+    <div class="main">
+        <nav>
+            <div class="logo">
+               <h2>KvN-Shop</h2>           
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Phone</a></li>
+                    <li><a href="">Accessorirs</a></li>
+                    <li><a href="">Cart</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="info">
+            <div class="overlay"></div>
+            <img src="../Attachements/mobile.jpg" class="mobile">
+            <div id="circle">
+                <div class="features one">
+                    <img src="../Attachements/processor-icon.png">
+                    <div>
+                    <h3>Proccessor</h3>
+                    <p>Snap dragon Octa-Core 18nm</p>
+                    </div>
+                </div>
+                <div class="features two">
+                    <img src="../Attachements/display-icon.png">
+                    <div>
+                    <h3>Display</h3>
+                    <p>6.5 inch Gorilla Amoled Display</p>
+                    </div>
+                </div>
+                <div class="features three">
+                    <img src="../Attachements/Camera-icon.png">
+                    <div>
+                    <h3>Camera</h3>
+                    <p>64MP Quad-Pixel sensors</p>
+                    </div>
+                </div>
+                <div class="features four">
+                    <img src="../Attachements/battery.png">
+                    <div>
+                    <h3>Battery</h3>
+                    <p>6000-mAh, 30hrs battery Life</p>
+                    <p>Type-c</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <img src="../Attachements/backward-icon.png" id="upBtn">
+            <h4>Click</h4>
+            <img src="../Attachements/forward-icon.png" id="downBtn">
+        </div>
+    </div>
+    <div class="error">
+        <h1>Responsive Work is Pending</h1>
+    </div>
+    <script>
+        var circle=document.getElementById('circle');
+        var upBtn=document.getElementById('upBtn');
+        var downBtn=document.getElementById('downBtn');
+        var rotate=circle.style.transform;
+        var rotateVal;
+
+        upBtn.onclick=function(){
+            rotateVal=rotate+"rotate(-90deg)";
+            circle.style.transform=rotateVal;
+            rotate=rotateVal;
+        }
+
+        downBtn.onclick=function(){
+            rotateVal=rotate+"rotate(90deg)";
+            circle.style.transform=rotateVal;
+            rotate=rotateVal;
+        }
+
+    </script>
+</body>
+</html>

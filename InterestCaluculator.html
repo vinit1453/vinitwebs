@@ -1,0 +1,61 @@
+<html>
+
+<head>
+    <title>s.i calculator</title>
+    <style>
+    
+        div {
+            margin: auto;
+            align-items: center;
+            text-align: center;
+            background: lightblue;
+            border-radius: 30px;
+            width: 300px;
+            height: max-content;
+            padding:10px;
+        }
+    </style>
+</head>
+
+<body>
+    
+        <div>
+            <h3>Simple Interest Caluculator</h3>
+            <form>
+            <label>Enter principal Amount</label><br>
+            <input type="text" id="A"  required><br>
+            <label>Enter time in months</label><br>
+            <input type="text" id="B" required><br>
+            <label>Enter Rate of interest</label><br>
+            <input type="text" id="c" required><strong>%</strong><br><br>
+           <input type="button" value="Calculate" onclick="Print()"> 
+           <input type="button" onclick="window.location.reload(true)" value="Reset"><br>
+            <output id="intamt" style="color:red"></output><br>
+            <output id="sum" style="color:red"></output>
+            </form>
+        </div>
+    <script>
+
+
+        function Print() //calculating Result
+        {
+            var p, t, r, si, total;
+            p = A.value
+            t = B.value;
+            r = c.value;
+        if(isNaN(p) || isNaN(t) || isNaN(r) || p=="" || t=="" ||r=="" ){
+            document.getElementById('intamt').innerHTML='Pls...provide valid data';
+            document.getElementById('sum').innerHTML='';
+        }else{
+            si = Number(p * t * r / 100);
+            total = Number(p) + Number(si);
+            intamt.innerHTML = "interest amount:" + si;
+            sum.innerHTML = "Total amount need to pay is:" + total;
+        }
+            
+        }
+    </script>
+  
+</body>
+
+</html>
